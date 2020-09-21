@@ -1,0 +1,30 @@
+{
+  "name": "@elethoughts/diagrams",
+  "version": "0.1.0",
+  "description": "Elethoughts TS Diagram Library ",
+  "scripts": {
+    "webpack:samples": "cd samples && webpack --config webpack.config.js",
+    "webpack:samples:dev": "cd samples && webpack-dev-server --open --config webpack.config.js",
+    "test": "jest --collect-coverage",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
+  },
+  "author": "Momaso",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^3.2.3",
+    "@types/jest": "^26.0.14",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.4.2",
+    "normalize.css": "^8.0.1",
+    "style-loader": "^1.2.1",
+    "ts-jest": "^26.4.0",
+    "ts-loader": "^8.0.4",
+    "tslint": "^6.1.3",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
