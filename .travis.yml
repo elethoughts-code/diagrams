@@ -1,0 +1,15 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm update
+install:
+- npm install
+script:
+- npm run tslint
+- npm test
+- npm run coveralls
+env:
+  global:
+    secure: dwZ0vyIqsvRcuc8/2fO4/pC0d/IRicREEgIFgajeNrOPQPqQ3YzM2nW6v50oI0pBEoQTuZWuPeoMJyPmmG2se8DMDHMFXmpDGzfC9Iohc6rct0w3VuJLmlFEa6lC3SkDuhHMYOQIqJi2DSX68OPsg08lLx7BC2WAIItxBTW/pnnVH6hGC6nEMHu7D5DQdTQBbtHzpL3UN3e5keiNHwB3xOGFG7gH6RwZLPA4srABQEzP9rGvl6/gSgA6c/isYAXIgNhyhiABJ9tgWU8YIbEqU4WvvYnO3H/SCVa+7U3j2iBG77yqDedfs2buO/B1ePDxdd7HqOlDHCypAhiecI8JAFbQ168fKHugzywsGa30mZhI5rTU/lqQdWNBaGR7bVXPIH7OJFhPg8/mxe08DBHtw8J8TrisJCQrf4TM6nAw4cJa1Oyxm5TU77zluFVsufExJq7/NqmKS7oZA+m1NUGTx8hjCkqPqgKo/0HkKETp8NK39MBdjxr3cYocyx1GlPyprzaQvlS/hpc2gOWaPwsBZtoStl/VTpaTpS278ZEkPHuBHf2I+mjtLsWC+LB9B6XYCA2fHO1qrW7ZRiAe4oWZjb/xkWIJl7KRm9ULbjs70IO4ENUWrLScK3bAr+dUVnV+mtdSBYeJgc8CL879OXmTR/n8doPy9/SnXOgvOJflbTQ=

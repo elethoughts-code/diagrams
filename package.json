@@ -6,6 +6,7 @@
     "webpack:samples": "cd samples && webpack --config webpack.config.js",
     "webpack:samples:dev": "cd samples && webpack-dev-server --open --config webpack.config.js",
     "test": "jest --collect-coverage",
+    "coverall": "jest --coverage && coveralls < coverage/lcov.info",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "author": "Momaso",
@@ -14,6 +15,7 @@
     "@types/html-webpack-plugin": "^3.2.3",
     "@types/jest": "^26.0.14",
     "clean-webpack-plugin": "^3.0.0",
+    "coveralls": "^3.1.0",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.4.2",
