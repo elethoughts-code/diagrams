@@ -6,7 +6,7 @@
     "webpack:samples": "cd samples && webpack --config webpack.config.js",
     "webpack:samples:dev": "cd samples && webpack-dev-server --open --config webpack.config.js",
     "test": "jest --collect-coverage",
-    "coverall": "jest --coverage && coveralls < coverage/lcov.info",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "author": "Momaso",
