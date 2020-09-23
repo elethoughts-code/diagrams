@@ -1,7 +1,7 @@
 import {Direction, Point, point} from '../core/Common'
 import {diamondEq} from '../test-utilities/units'
 import {DiamondElement} from './DiamondElement'
-import {Diamond} from '../core/Primitives'
+import {Diamond, diamondFromEdgy} from '../core/Primitives'
 
 function diamond(t,r,b,l: Point): Diamond {
     return {
@@ -14,7 +14,11 @@ function diamond(t,r,b,l: Point): Diamond {
 
 it('should create simple diamond shape', () => {
     // Given
-    const d = new DiamondElement(point(10,20), Direction.top, 50)
+    const dfe = diamondFromEdgy(point(10,20), Direction.top, 50)
+    const d = new DiamondElement(dfe.getTop(),
+        dfe.getBottom(),
+        dfe.getLeft(),
+        dfe.getRight())
 
     // When
     const element = d.create()

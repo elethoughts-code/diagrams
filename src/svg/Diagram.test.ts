@@ -1,9 +1,15 @@
 import {Diagram} from './Diagram'
 import {RectElement} from './RectElement'
-import {Direction, point} from '../core/Common'
+import {Direction, Point, point} from '../core/Common'
 import {DiamondElement} from './DiamondElement'
 import {PathElement} from './PathElement'
 import {ArrowMarker} from './ArrowMarker'
+import {diamondFromEdgy} from '../core/Primitives'
+
+function newDiamond(origin: Point, originDir: Direction, radius: number): DiamondElement {
+    const dfe = diamondFromEdgy(origin, originDir, radius)
+    return new DiamondElement(dfe.getTop(), dfe.getBottom(), dfe.getLeft(), dfe.getRight())
+}
 
 it('should create an empty diagram element', () => {
     // Given
@@ -71,7 +77,7 @@ it('should create multi elements diagram', () => {
 
     // When
     diagram.addChild(new RectElement(point(10,10), 60, 30))
-    diagram.addChild(new DiamondElement(point(100,100), Direction.top, 30))
+    diagram.addChild(newDiamond(point(100,100), Direction.top, 30))
     diagram.addChild(new PathElement([point(10,10), point(100,100)]))
 
     const element = diagram.create()
@@ -97,11 +103,11 @@ it('should create multi elements and layers diagram', () => {
 
     // When
     diagram.addChild(new RectElement(point(10,10), 60, 30))
-    diagram.addChild(new DiamondElement(point(100,100), Direction.top, 30))
+    diagram.addChild(newDiamond(point(100,100), Direction.top, 30))
     diagram.addChild(new PathElement([point(10,10), point(100,100)]))
 
     diagram.addChild(new RectElement(point(10,10), 60, 30),1)
-    diagram.addChild(new DiamondElement(point(100,100), Direction.top, 30),1)
+    diagram.addChild(newDiamond(point(100,100), Direction.top, 30),1)
 
     diagram.addChild(new RectElement(point(10,10), 60, 30),2)
 
